@@ -4,6 +4,23 @@
   </head>
 
   <body>
-    <script src="04.js"></script>
+  <form>
+    <input id="inputBox" type="text" value="seconds"></input>
+    <input id="submitted" type="submit" value="start timer"></input>
+  </form>
+  <h1 id="time"></h1>
+    <script
+    src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous"></script>
+    <script>
+    $('#submitted').on('click', function(ev) {
+
+        ev.preventDefault();
+        var duration = $('#inputBox').val();
+        startTimer(duration); 
+    });
+    </script>
+    <script src="microwave.js"></script>
   </body>
 </html>
