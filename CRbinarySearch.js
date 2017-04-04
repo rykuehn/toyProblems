@@ -18,7 +18,40 @@ const BinarySearchRec = function(value, array, high, low) {
    if(min > max){
     return -1;
    }
-
 }
 
-console.log(BinarySearchRec(9, [ 1, 2, 4, 5, 7, 6, 9]));
+//Space Complexity
+//O(logN)
+
+//Time Complexity
+//O(logN)
+
+const BinarySearchIterative = function(value, array, high, low) {
+ 
+  while(low <= high) {
+    var mid = low + Math.floor((high - low) / 2);
+
+    if(value === array[mid]){
+      return mid;
+    }
+
+    if(value > array[mid]){
+      low = low + 1;
+    }
+
+    if(value < array[mid]){
+      high = high - 1;
+    }
+  }
+
+  return -1;
+}
+
+//Space Complexity
+//O(1)
+
+//Time Complexity
+//O(logN)
+
+
+//console.log(BinarySearchIterative(9, [ 1, 2, 4, 5, 7, 6, 9], 6, 0));
