@@ -1,29 +1,29 @@
-function fib(n) {
-  if(n === 1 || n === 2) {
+const fibRecursive = function(n) {
+  if(n === 0 || n === 1) {
     return 1;
   }
 
-  return fib(n-1) + fib(n - 2);
+  return fibRecursive(n-1) + fibRecursive(n-2);
 }
 
-// function fib(n) {
+//time complexity O(2^n)
+//memory complexity O(n)
 
-//   if(n === 0 || n === 1){
-//     return 1;
-//   }
+const fibIterative = function(n){
+  let current;
+  let prev = 1;
+  let prevPrev = 0;
 
-//   let current = 0;
-//   let prev = 1;
-//   let prevPrev = 0;
+  while(n > 0) {
+    current = prevPrev + prev;
+    prevPrev = prev;
+    prev = current;
 
-//   for(var i = 1; i < n; i++) {
-//     current = prevPrev + prev;
-//     prevPrev = prev;
-//     prev = current;
-    
-//   }
+    n -= 1;
+  }
 
-//   return current;
-// }
+  return current;
+}
 
-console.log(fib(7))
+//time complexity O(n)
+//memory complexity O(1)
